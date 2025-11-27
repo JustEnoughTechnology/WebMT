@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Train Dominoes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="container">
+                <h1>Mexican Train Dominoes</h1>
+                <div class="menu">
+                    <button id="create-game-btn" class="btn btn-primary">Create New Game</button>
+                    <button id="join-game-btn" class="btn btn-secondary">Join Existing Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Game Screen -->
+        <div id="create-game-screen" class="screen">
+            <div class="container">
+                <h2>Create New Game</h2>
+                <form id="create-game-form">
+                    <div class="form-group">
+                        <label for="player-name-create">Your Name:</label>
+                        <input type="text" id="player-name-create" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="starting-double">Starting Double:</label>
+                        <select id="starting-double">
+                            <option value="12">Double-12 (91 tiles)</option>
+                            <option value="9">Double-9 (55 tiles)</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Create Game</button>
+                        <button type="button" id="back-from-create" class="btn btn-secondary">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Join Game Screen -->
+        <div id="join-game-screen" class="screen">
+            <div class="container">
+                <h2>Join Game</h2>
+                <form id="join-game-form">
+                    <div class="form-group">
+                        <label for="player-name-join">Your Name:</label>
+                        <input type="text" id="player-name-join" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-code">Game Code:</label>
+                        <input type="text" id="game-code" placeholder="Enter 6-character code" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Join Game</button>
+                        <button type="button" id="back-from-join" class="btn btn-secondary">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lobby Screen -->
+        <div id="lobby-screen" class="screen">
+            <div class="container">
+                <h2>Game Lobby</h2>
+                <div id="game-code-display" class="game-code"></div>
+                <div class="lobby-info">
+                    <h3>Players in Game:</h3>
+                    <ul id="player-list"></ul>
+                </div>
+                <div class="button-group">
+                    <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+                    <button id="leave-game-btn" class="btn btn-secondary">Leave Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-container">
+                <div class="game-header">
+                    <div class="game-info">
+                        <span id="current-round">Round: 12</span>
+                        <span id="current-player">Current Player: Player 1</span>
+                    </div>
+                    <div id="player-score">Your Score: 0</div>
+                </div>
+
+                <div class="game-board">
+                    <!-- Center Hub -->
+                    <div class="center-hub">
+                        <div id="center-domino" class="domino double"></div>
+                    </div>
+
+                    <!-- Mexican Train -->
+                    <div class="train mexican-train">
+                        <h3>Mexican Train</h3>
+                        <div id="mexican-train-dominoes" class="train-dominoes"></div>
+                    </div>
+
+                    <!-- Player Trains -->
+                    <div id="player-trains" class="player-trains"></div>
+
+                    <!-- Boneyard -->
+                    <div class="boneyard">
+                        <span>Boneyard: <span id="boneyard-count">0</span></span>
+                        <button id="draw-btn" class="btn btn-small">Draw</button>
+                    </div>
+                </div>
+
+                <div class="player-hand">
+                    <h3>Your Hand</h3>
+                    <div id="hand-dominoes" class="hand-dominoes"></div>
+                </div>
+
+                <div class="game-actions">
+                    <button id="end-turn-btn" class="btn btn-secondary">End Turn</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message-overlay" class="message-overlay hidden">
+            <div class="message-box">
+                <p id="message-text"></p>
+                <button id="message-close" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
