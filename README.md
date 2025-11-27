@@ -13,6 +13,7 @@ A multiplayer Mexican Train dominoes game with a web frontend and Python backend
 ## Technology Stack
 
 ### Backend
+
 - Python 3.11+
 - FastAPI (REST API and WebSocket)
 - SQLAlchemy (ORM with async support)
@@ -20,17 +21,19 @@ A multiplayer Mexican Train dominoes game with a web frontend and Python backend
 - uv (Package management)
 
 ### Frontend
+
 - HTML5/CSS3/JavaScript (Vanilla)
 - WebSocket client
 - Responsive design
 
 ### Infrastructure
+
 - Docker & Docker Compose
 - Nginx (Frontend server and reverse proxy)
 
 ## Project Structure
 
-```
+```text
 WebMT/
 ├── backend/
 │   ├── app/
@@ -65,11 +68,13 @@ WebMT/
 ### Development Setup
 
 1. **Clone the repository**
+
    ```bash
    cd WebMT
    ```
 
 2. **Set up environment variables**
+
    ```bash
    cd backend
    cp .env.example .env
@@ -77,14 +82,15 @@ WebMT/
    ```
 
 3. **Start the development environment**
+
    ```bash
    docker-compose -f docker-compose.dev.yml up --build
    ```
 
 4. **Access the application**
-   - Frontend: http://localhost:8080
-   - Backend API: http://localhost:8000
-   - API Docs: http://localhost:8000/docs
+   - Frontend: <http://localhost:8080>
+   - Backend API: <http://localhost:8000>
+   - API Docs: <http://localhost:8000/docs>
 
 ### Production Deployment
 
@@ -95,6 +101,7 @@ docker-compose up -d --build
 ### Local Development (without Docker)
 
 **Backend:**
+
 ```bash
 cd backend
 uv sync
@@ -108,7 +115,8 @@ Serve the frontend directory with any static file server, or use the nginx confi
 
 Mexican Train is a domino game played with a double-12 (or double-9) set. The objective is to be the first player to play all your dominoes.
 
-### Basic Rules:
+### Basic Rules
+
 1. Each round starts with a double domino (12-12, 11-11, etc.)
 2. Players take turns playing dominoes that match the open end of any train
 3. Each player has their own personal train starting from the center
@@ -131,12 +139,14 @@ Mexican Train is a domino game played with a double-12 (or double-9) set. The ob
 ## Development
 
 ### Running Tests
+
 ```bash
 cd backend
 uv run pytest
 ```
 
 ### Code Formatting
+
 ```bash
 cd backend
 uv run black app/
